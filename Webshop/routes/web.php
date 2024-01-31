@@ -18,7 +18,5 @@ Route::get('/', function () {
 });
 
 Route::get('item', function () {
-    return view('item', [
-        'item' => '<h1>First Item</h1>'
-    ]);
+    return view('item');
 });
