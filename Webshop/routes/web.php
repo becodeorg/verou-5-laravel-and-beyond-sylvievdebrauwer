@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,3 +24,5 @@ Route::get('/', [HomeController::class, 'index']);
 Route::get('item', function () {
     return view("item");
 });
+
+Route::get('/products', [PostController::class,'index'])->name('products.index');
