@@ -8,6 +8,16 @@
 
     <h1>Silfs Second Hand</h1>
 
+    <div style="border: 3px solid black;">
+        <h2>Register</h2>
+        <form action="">
+            <input type="text" placeholder="name">
+            <input type="text" placeholder="email">
+            <input type="text" placeholder="password">
+            <button>Register</button>
+        </form>
+    </div>
+
 
 
     <article>
