@@ -28,7 +28,7 @@
     <div style="border: 3px solid black;">
         <h2>All Products</h2>
         @foreach($products as $product)
-        <div style="background-color: gray; padding:10px; margin:10px;">
+        <div style="background-color: padding:10px; margin:10px;">
             <h3>{{$product['title']}} Sold by {{$product->user->name}}</h3>
             <p>€ {{$product['price']}}<br><br></p>
             {{$product['description']}}
@@ -36,7 +36,7 @@
             <form action="/delete-product/{{$product->id}}" method="POST">
                 @csrf
                 @method('DELETE')
-                <button>Delete</button>
+                <button onclick="confirmDeletion('{{$product->id}}')">Delete</button>
             </form>
         </div>
         @endforeach
