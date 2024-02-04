@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 
+<html lang="en">
+
+<head>
 <title>Silfs Second Hand</title>
 <link rel="stylesheet" href="/app.css">
 <script src="/app.js"></script>
+</head>
 
 <body>
     @auth
-    <p>Congrats you are logged in.</p>
+    <p>Welcome, {{ auth()->user()->name}}!</p>
     <form action="/logout" method="POST">
         @csrf
         <button type="submit">Logout</button>
@@ -17,7 +21,14 @@
         <form action="/create-product" method="POST">
             @csrf
             <!--TODO MAKE SURE IMAGES ARE RESTRICTED IN SIZE AND JPG FORMAT, NO SPAM!!!!-->
-            <!--<input type="file" name="image" accept="image/*" required><br><br>-->
+            <form action="upload.php" method="POST" enctype="multipart/form-data">
+                <input type="file" name="image" accept="image/*" required><br><br>
+                <button type="submit" name="submit">Upload Image
+
+                </button>
+
+
+            </form>
             <input type="text" name="title" placeholder="Product Title"><br><br>
             <input type="number" name="price" min="0" step="0.01" placeholder="Price" required><br><br>
             <textarea name="description" placeholder="Description" required></textarea><br><br>
@@ -26,7 +37,7 @@
     </div>
 
     <div style="border: 3px solid black;">
-        <h2>All Products</h2>
+        <h2>My Products</h2>
         @foreach($products as $product)
         <div style="background-color: padding:10px; margin:10px;">
             <h3>{{$product['title']}} Sold by {{$product->user->name}}</h3>

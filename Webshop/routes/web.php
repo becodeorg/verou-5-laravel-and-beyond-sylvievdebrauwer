@@ -42,7 +42,7 @@ Route::put('/edit-product/{product}', [ProductsController::class, 'actuallyUpdat
 Route::delete('/delete-product/{product}', [ProductsController::class, 'deleteProduct']);
 
 
-/*Route::get('/products', [ProductsController::class,'index'])->name('products.index');
+Route::get('/products', [ProductsController::class,'index'])->name('products.index');
 Route::get('item', function () {
     return view("item");
-});*/
+});
