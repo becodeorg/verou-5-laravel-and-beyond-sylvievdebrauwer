@@ -10,6 +10,13 @@ use Illuminate\Support\Facades\Log;
 
 class ProductsController extends Controller
 {
+    public function deleteProduct(Product $product) {
+        if (auth()->user()->id === $product['user_id']) {
+        $product->delete();
+    }
+    return redirect ('/');
+}
+
     public function actuallyUpdateProduct(Product $product, Request $request) {
         log::info('Updating product:' . $product->id);
                 if (auth()->user()->id !== $product['user_id']) {

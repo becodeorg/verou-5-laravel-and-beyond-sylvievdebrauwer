@@ -39,6 +39,8 @@ Route::post('/login', [UserController::class,'login']);
 Route::post('/create-product', [ProductsController::class, 'createProduct'])->name('create-product.createProduct');
 Route::get('/edit-product/{product}', [ProductsController::class, 'showEditScreen'])->name('edit-product.editProduct');
 Route::put('/edit-product/{product}', [ProductsController::class, 'actuallyUpdateProduct']);
+Route::delete('/delete-product/{product}', [ProductsController::class, 'deleteProduct']);
+
 
 /*Route::get('/products', [ProductsController::class,'index'])->name('products.index');
 Route::get('item', function () {
