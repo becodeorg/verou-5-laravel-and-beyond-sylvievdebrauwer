@@ -16,10 +16,12 @@
         <h2>Create A New Add</h2>
         <form action="/create-product" method="POST">
             @csrf
-            <input type="text" name="title" placeholder="product title">
-            <textarea name="body" placeholder="description">
-                <button type="submit">Create Add</button>
-            </textarea>
+            <!--TODO MAKE SURE IMAGES ARE RESTRICTED IN SIZE AND JPG FORMAT, NO SPAM!!!!-->
+            <input type="file" name="image" accept="image/*" required><br><br>
+            <input type="text" name="title" placeholder="Product Title"><br><br>
+            <input type="number" name="price" min="0" step="0.01" placeholder="Price" required><br><br>
+            <textarea name="body" placeholder="Description" required></textarea><br><br>
+            <button type="submit">Create Add</button>
         </form>
     </div>
 
