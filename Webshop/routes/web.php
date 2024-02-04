@@ -37,10 +37,10 @@ Route::post('/login', [UserController::class,'login']);
 
 // Post Products related routes
 Route::post('/create-product', [ProductsController::class, 'createProduct'])->name('create-product.createProduct');
-Route::get('/edit-product/{product}', [ProductsController::class, 'showEditScreen']);
-//Route::get('/products', [ProductsController::class,'index'])->name('products.index');
+Route::get('/edit-product/{product}', [ProductsController::class, 'showEditScreen'])->name('edit-product.editProduct');
+Route::put('/edit-product/{product}', [ProductsController::class, 'actuallyUpdateProduct']);
 
-
-/*Route::get('item', function () {
+/*Route::get('/products', [ProductsController::class,'index'])->name('products.index');
+Route::get('item', function () {
     return view("item");
 });*/
