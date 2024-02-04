@@ -5,16 +5,45 @@
 <script src="/app.js"></script>
 
 <body>
+    @auth
+    <p>Congrats you are logged in.</p>
+    <form action="/logout" method="POST">
+        @csrf
+        <button type="submit">Logout</button>
+    </form>
 
+    <div style="border: 3px solid black;">
+        <h2>Create A New Add</h2>
+        <form action="/create-product" method="POST">
+            @csrf
+            <input type="text" name="title" placeholder="product title">
+            <textarea name="body" placeholder="description">
+                <button type="submit">Create Add</button>
+            </textarea>
+        </form>
+    </div>
+
+    @else
     <h1>Silfs Second Hand</h1>
 
     <div style="border: 3px solid black;">
         <h2>Register</h2>
-        <form action="">
-            <input type="text" placeholder="name">
-            <input type="text" placeholder="email">
-            <input type="text" placeholder="password">
-            <button>Register</button>
+        <form action="/register" method="POST">
+            @csrf
+            <input type="text" placeholder="name" name="name">
+            <input type="text" placeholder="email" name="email">
+            <input type="text" placeholder="password" name="password">
+            <button type= "submit" >Register</button>
+        </form>
+    </div>
+
+    <div style="border: 3px solid black;">
+        <h2>Login</h2>
+        <form action="/login" method="POST">
+            @csrf
+            <input type="text" placeholder="name" name="loginname">
+            <input type="password" placeholder="password" name="loginpassword">
+            <button type= "submit" >Log in</button>
         </form>
     </div>
 
@@ -46,3 +75,4 @@
 </body>
 </html>
 
+@endauth
