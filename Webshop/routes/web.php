@@ -24,7 +24,7 @@ Route::post('/logout', [UserController::class,'logout']);
 Route::post('/login', [UserController::class,'login']);
 
 // Products related routes
-Route::post('/create-product', [ProductsController::class, 'createProduct']);
+Route::post('/create-product', [ProductsController::class, 'createProduct'])->name('create-product.createProduct');
 
 //Route::get('/products', [ProductsController::class,'index'])->name('products.index');
 

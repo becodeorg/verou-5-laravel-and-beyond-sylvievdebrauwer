@@ -17,10 +17,10 @@
         <form action="/create-product" method="POST">
             @csrf
             <!--TODO MAKE SURE IMAGES ARE RESTRICTED IN SIZE AND JPG FORMAT, NO SPAM!!!!-->
-            <input type="file" name="image" accept="image/*" required><br><br>
+            <!--<input type="file" name="image" accept="image/*" required><br><br>-->
             <input type="text" name="title" placeholder="Product Title"><br><br>
             <input type="number" name="price" min="0" step="0.01" placeholder="Price" required><br><br>
-            <textarea name="body" placeholder="Description" required></textarea><br><br>
+            <textarea name="description" placeholder="Description" required></textarea><br><br>
             <button type="submit">Create Add</button>
         </form>
     </div>
