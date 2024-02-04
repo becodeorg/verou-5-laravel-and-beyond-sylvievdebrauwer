@@ -8,6 +8,10 @@ use App\Http\Controllers\Controller;
 
 class ProductsController extends Controller
 {
+    public function showEditScreen(Product $product) {
+        return view ('products.edit-product', ['product' => $product]);
+    }
+
     public function createProduct(Request $request) {
         $incomingFields = $request->validate([
             'title' => 'required',

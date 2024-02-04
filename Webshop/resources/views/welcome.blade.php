@@ -25,6 +25,23 @@
         </form>
     </div>
 
+    <div style="border: 3px solid black;">
+        <h2>All Products</h2>
+        @foreach($products as $product)
+        <div style="background-color: gray; padding:10px; margin:10px;">
+            <h3>{{$product['title']}}</h3>
+            <p>€ {{$product['price']}}<br><br></p>
+            {{$product['description']}}
+            <p><a href="/edit-product/{{$product->id}}">Edit</a></p>
+            <form action="/delete-product/{{$product->id}}" method="POST">
+                @csrf
+                @method('DELETE')
+                <button>Delete</button>
+            </form>
+        </div>
+        @endforeach
+    </div>
+
     @else
     <h1>Silfs Second Hand</h1>
 
